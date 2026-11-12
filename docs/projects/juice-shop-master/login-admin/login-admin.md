@@ -54,7 +54,7 @@ SELECT * FROM Users WHERE email = '<input>' AND password = '<hash>' AND deletedA
 6. **Result.** The response is `200 OK` and contains an authentication token for the first user in the `Users` table — the **admin** account. You are now logged in as administrator.
 
 > [!TIP]
-> To log in as a *specific* user instead of the first row, target the account directly, e.g. `admin@juice-sh.op'--`. The `--` comments out the rest of the query, including the password check.
+> To log in as a _specific_ user instead of the first row, target the account directly, e.g. `admin@juice-sh.op'--`. The `--` comments out the rest of the query, including the password check.
 
 ## Why It Works
 
@@ -94,10 +94,10 @@ Being vulnerable to SQLi effectively means the attacker controls the database qu
 
 ## Video
 
-- [Challenge walkthrough video](https://go.screenpal.com/watch/cOXjYyn4iBA) 
+- [Challenge walkthrough video](https://go.screenpal.com/watch/cOXjYyn4iBA)
 
 ## References
 
-- OWASP Juice Shop documentation
+- OWASP Juice Shop tutorial (Developer Akademie)
 - OWASP Top 10 – A03:2021 Injection
 - OWASP SQL Injection Prevention Cheat Sheet

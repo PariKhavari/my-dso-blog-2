@@ -133,3 +133,4 @@ A broken access control flaw means the server trusts the client to restrict itse
 
 - OWASP Juice Shop documentation
 - OWASP Top 10 – A01:2021 Broken Access Control
+- OWASP Juice Shop tutorialsvideo (Developer Akademie)

@@ -154,4 +154,4 @@ Files exposed in `/ftp/` (exact set varies by Juice Shop version):
 
 - OWASP Juice Shop documentation
 - OWASP Top 10 – A01:2021 Broken Access Control
-- _(add the tutorial/video you followed, if any)_
+- OWASP Juice Shop tutorialsvideo (Developer Akademie)
