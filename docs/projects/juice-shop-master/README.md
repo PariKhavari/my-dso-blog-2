@@ -2,7 +2,7 @@
 
 This project documents the exploitation of selected vulnerabilities in the OWASP Juice Shop, a deliberately insecure web application. Three challenges from different security categories were solved, documented step by step and recorded on video. Each write-up explains how the vulnerability works, how it was exploited and how it can be mitigated.
 
-> **Disclaimer:** The content of this documentation is intended for educational purposes only. All attacks were performed against a local, intentionally vulnerable test environment. Do not use these techniques against systems you do not own or have no explicit permission to test.
+> [!WARNING] **Disclaimer:** The content of this documentation is intended for educational purposes only. All attacks were performed against a local, intentionally vulnerable test environment. Do not use these techniques against systems you do not own or have no explicit permission to test.
 
 ## Table of Contents
 
@@ -17,12 +17,12 @@ This project documents the exploitation of selected vulnerabilities in the OWASP
 
 All challenges were performed in an isolated lab environment: the OWASP Juice Shop runs inside a **Kali Linux virtual machine**, so no real systems or real personal data are affected.
 
-| Tool | Purpose | Used in |
-| --- | --- | --- |
-| Kali Linux (VM) | Isolated attack and test environment | All challenges |
-| Burp Suite | Intercepting, inspecting and modifying HTTP requests | Confidential Document, Login Admin |
-| Browser DevTools | Inspecting the frontend and network traffic | All challenges |
-| Custom Selenium script (extra) | Automated discovery of hidden Angular routes | Admin Section |
+| Tool                           | Purpose                                              | Used in                            |
+| ------------------------------ | ---------------------------------------------------- | ---------------------------------- |
+| Kali Linux (VM)                | Isolated attack and test environment                 | All challenges                     |
+| Burp Suite                     | Intercepting, inspecting and modifying HTTP requests | Confidential Document, Login Admin |
+| Browser DevTools               | Inspecting the frontend and network traffic          | All challenges                     |
+| Custom Selenium script (extra) | Automated discovery of hidden Angular routes         | Admin Section                      |
 
 Choosing and combining the right tool for each attack was part of the challenge: the same application required a proxy for one vulnerability and browser automation for another.
 
@@ -42,11 +42,11 @@ Choosing and combining the right tool for each attack was part of the challenge:
 
 ## Challenges
 
-| Challenge | Category | Documentation | Video |
-| --- | --- | --- | --- |
-| Confidential Document | Sensitive Data Exposure | [Write-up](./confidential-document/confidential-document.md) | [Video](https://go.screenpal.com/watch/cOXnFdnyN49) |
-| Login Admin | Injection (SQL Injection) | [Write-up](./login-admin/login-admin.md) | [Video](https://go.screenpal.com/watch/cOXjYyn4iBA) |
-| Admin Section | Broken Access Control | [Write-up](./admin-section/admin-section.md) | [Video](https://go.screenpal.com/watch/cOXlbKn4F2j) |
+| Challenge             | Category                  | Documentation                                                | Video                                               |
+| --------------------- | ------------------------- | ------------------------------------------------------------ | --------------------------------------------------- |
+| Confidential Document | Sensitive Data Exposure   | [Write-up](./confidential-document/confidential-document.md) | [Video](https://go.screenpal.com/watch/cOXnFdnyN49) |
+| Login Admin           | Injection (SQL Injection) | [Write-up](./login-admin/login-admin.md)                     | [Video](https://go.screenpal.com/watch/cOXjYyn4iBA) |
+| Admin Section         | Broken Access Control     | [Write-up](./admin-section/admin-section.md)                 | [Video](https://go.screenpal.com/watch/cOXlbKn4F2j) |
 
 ### Confidential Document
 

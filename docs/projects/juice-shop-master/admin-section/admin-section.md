@@ -1,5 +1,6 @@
 # Admin Section
 
+> [!NOTE]
 > This documentation is provided **for educational purposes only**.
 > All testing was performed in a local, isolated lab environment (Kali VM) against a deliberately vulnerable application. No real personal data, credentials, or systems were used.
 
