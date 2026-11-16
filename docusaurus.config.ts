@@ -7,6 +7,8 @@ dotenvconfig();
 
 /* TODO: change to read configuration from environment */
 const blogEnabled = Boolean(process.env.BLOG_ENABLED === 'true')
+const gitRepositoryUrl = process.env.GIT_REPOSITORY_URL || 'https://github.com/PariKhavari/my-dso-blog-2';
+
 
 const config: Config = {
   title: 'DSO Live Demo Docs',
@@ -49,8 +51,7 @@ const config: Config = {
           sidebarPath: './sidebars.ts',
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/spmse/dev-blog-template',
+         editUrl: gitRepositoryUrl,
         },
         blog: blogEnabled ? 
           {
@@ -93,7 +94,7 @@ const config: Config = {
           label: 'Docs',
         },
         {
-          href: 'https://github.com/spmse/dev-blog-template',
+         href: gitRepositoryUrl,
           label: 'Github',
           position: 'right',
         },
