@@ -1,0 +1,25 @@
+.skills {
+  padding: 3rem max(2rem, calc((100% - 1000px) / 2));
+  background: #1f2937;
+  color: #fff;
+}
+.title { color: #fff; }
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem;
+  border-radius: 8px;
+  background: #374151;
+}
+.icon { font-size: 2rem; }
+
+@media (max-width: 768px) {
+  .grid { grid-template-columns: repeat(2, 1fr); }
+}

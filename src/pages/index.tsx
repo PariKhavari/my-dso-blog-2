@@ -3,6 +3,7 @@ import Layout from '@theme/Layout';
 import Head from '@docusaurus/Head';
 import Header from '../components/header';
 import Hero from '../components/hero';
+import Skills from '../components/skills';
 
 export default function Home(): ReactNode {
   return (
@@ -13,6 +14,7 @@ export default function Home(): ReactNode {
       <Header />
       <main>
         <Hero />
+        <Skills />
       </main>
     </Layout>
   );
