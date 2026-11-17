@@ -1,16 +1,14 @@
 import React, { useState, type ReactNode } from 'react';
 import styles from './header.module.css';
 
-export interface NavItem {
-  label: string;
-  href: string;
-}
+const items = [
+  { label: 'About me', href: '#about' },
+  { label: 'My skills', href: '#skills' },
+  { label: 'My projects', href: '#projects' },
+  { label: 'Contact', href: '#contact' },
+];
 
-interface HeaderProps {
-  items: NavItem[];
-}
-
-export default function Header({ items }: HeaderProps): ReactNode {
+export default function Header(): ReactNode {
   const [open, setOpen] = useState<boolean>(false);
 
   return (
