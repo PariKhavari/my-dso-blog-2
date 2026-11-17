@@ -4,7 +4,7 @@ This website is built using [Docusaurus](https://docusaurus.io/), a modern stati
 
 ## Repository Description
 
-This repository hosts a developer blog built with Docusaurus. It includes tools and scripts for creating, managing, and deploying static web content. The software supports rapid local development, customizable theming, and seamless deployment to platforms like GitHub Pages or NGINX.
+The software supports rapid local development, customizable theming, and automated deployment to GitHub Pages.
 
 ## Table of Contents
 
@@ -15,16 +15,12 @@ This repository hosts a developer blog built with Docusaurus. It includes tools 
     - [Prerequisites](#prerequisites)
   - [Repository Structure](#repository-structure)
   - [Deployment](#deployment)
-    - [Deploy to Github Pages](#deploy-to-github-pages)
-    - [Deploying using NGINX](#deploying-using-nginx)
-    - [Contributing](#contributing)
 
 ## Quickstart
 
 ### Prerequisites
 
 - [Node.js](https://nodejs.org/) (v24 or later recommended)
-- [Docker](https://www.docker.com/products/docker-desktop) (only required if [deploying using NGINX](#deploying-using-nginx))
 
 1. Installation
 
@@ -50,13 +46,8 @@ This repository hosts a developer blog built with Docusaurus. It includes tools 
 
 4. Deployment
 
-   In order to deploy onto Github Pages, ensure that your `docusaurus.config.ts` conforms with the [documentation guidelines](https://docusaurus.io/docs/deployment#deploying-to-github-pages). After that is ensured run the following command to deploy:
+   Deployment is automated. See the [Deployment](#deployment) section below.
 
-   ```
-   $ USE_SSH=true npm run deploy
-   ```
-
-For detailed information about deploying this Docusaurus project, refer to the [Deployment](#deployment) section below.
 
 ## Repository Structure
 
@@ -69,6 +60,8 @@ The repository is organized as follows:
 - `sidebars.ts`: Configures the structure of sidebars in the documentation section.
 - `docusaurus.config.ts`: Main configuration file for customizing and managing Docusaurus behavior.
 - `build/`: Generated after running the `npm run build` command. Contains the static website files ready for deployment.
+- `example.env`: Template for environment variables (e.g. `GIT_REPOSITORY_URL`). Copy it to `.env` and adjust the values. Never commit `.env`.
+- `checklist.md`: Completed project checklist for the submission.
 
 New content can be added as follows:
 
@@ -77,28 +70,4 @@ New content can be added as follows:
 
 ## Deployment
 
-### Deploy to Github Pages
-
-To deploy using SSH:
-
-```
-$ USE_SSH=true npm run deploy
-```
-
-To deploy without using SSH, run:
-
-```
-$ GIT_USER=<Your GitHub username> npm run deploy
-```
-
-If you are using GitHub pages for hosting, this command is a convenient way to build the website and push to the `gh-pages` branch.
-
-### Deploying using NGINX
-
-To deploy the site using NGINX and Docker, follow this [guide](./docs/guides/deploy-docusaurus-with-docker-and-nginx.md)
-
-### Contributing
-
-Currently, this project does not seek collaborators, but we're open to suggestions regarding enhancements or guides to prepare.
-Open an issue with a detailed description on the change you suggest and elaborate why it's benefitial for the project and vast majority.
-If accepted in the discussion, open a pull request from your fork of this repository to contribute your changes.
+The website is automatically deployed to GitHub Pages using a prepared GitHub Actions workflow whenever a commit is pushed to the `main` branch.
