@@ -2,7 +2,7 @@
   display: grid;
   grid-template-columns: 3fr 2fr;
   gap: 3rem;
-  padding: 4rem 6rem;
+  padding: 3rem max(2rem, calc((100% - 1000px) / 2));
   background: #1f2937;
   color: #fff;
   font-size: 0.9rem;
