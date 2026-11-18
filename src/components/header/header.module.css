@@ -1,8 +1,10 @@
 .header {
-  position: relative;
-  display: flex;
-  padding: 1rem 2rem;
-  background: #2563eb;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--portfolio-dark);
+  border-bottom: 1px solid #1e293b;
+  padding: 1rem max(2rem, calc((100% - var(--content-width)) / 2));
 }
 .nav { display: flex; gap: 2rem; }
 .link { color: #fff; font-weight: 500; }
