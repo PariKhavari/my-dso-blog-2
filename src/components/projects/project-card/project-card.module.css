@@ -1,0 +1,43 @@
+.card {
+  background: #1f2937;
+  color: #fff;
+  border-radius: 8px;
+  padding: 1.5rem;
+  gap: 1rem;
+}
+.title { margin: 0; }
+.tags { display: flex; flex-wrap: wrap; gap: 0.5rem; list-style: none; padding: 0; margin: 0; }
+.tag { background: #fff; color: #1f2937; border-radius: 4px; padding: 0.15rem 0.5rem; font-size: 0.8rem; }
+.description { margin: 0; }
+.image { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; border-radius: 6px; }
+.actions { display: flex; gap: 0.75rem; justify-content: flex-end; }
+.primary, .secondary { padding: 0.4rem 1rem; border-radius: 6px; font-weight: 500; color: #fff; }
+.primary { background: #2563eb; }
+.secondary { border: 1px solid #fff; }
+.primary:hover, .secondary:hover { color: #fff; text-decoration: none; opacity: 0.85; }
+
+/* Desktop: Text links, Bild rechts */
+.desktop {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas:
+    'title title'
+    'tags tags'
+    'text image'
+    'actions actions';
+}
+.desktop .title { grid-area: title; }
+.desktop .tags { grid-area: tags; }
+.desktop .description { grid-area: text; }
+.desktop .image { grid-area: image; }
+.desktop .actions { grid-area: actions; }
+
+/* Mobile: alles untereinander */
+.mobile { display: flex; flex-direction: column; }
+
+.image {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-radius: 12px;
+}
