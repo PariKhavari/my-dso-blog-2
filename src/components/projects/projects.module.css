@@ -20,8 +20,12 @@
   cursor: pointer;
   opacity: 0.7;
 }
-.activeItem .projectButton { opacity: 1; font-weight: 700; text-decoration: underline; }
-
+.activeItem .projectButton { opacity: 1; color: #111827; font-weight: 600; }
+.activeItem::marker { color: #111827; }
+.seeMoreLink {
+  background: none; border: none; padding: 0;
+  color: #fff; font-size: 1rem; text-decoration: underline; cursor: pointer;
+}
 .mobileLayout { display: none; flex-direction: column; gap: 1.5rem; }
 .seeMore {
   align-self: center;
