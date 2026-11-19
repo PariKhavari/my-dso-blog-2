@@ -1,41 +1,21 @@
-.hero { padding: 4rem 2rem; background: #0f172a; color: #e2e8f0; }
+.hero { padding: 3rem 2rem; background: #2563eb; color: #fff; }
 .container {
   display: flex; align-items: center; justify-content: space-between;
-  gap: 3rem; max-width: 1000px; margin: 0 auto;
+  gap: 2rem; max-width: 1000px; margin: 0 auto;
 }
-.text { max-width: 560px; }
+.text { max-width: 600px; }
 .greeting { margin: 0; }
-.name { font-size: 4rem; line-height: 1.1; margin: 0.5rem 0 1.5rem; color: #fff; }
-.role { font-size: 1.4rem; color: #2dd4bf; }
-.highlight {
-  padding: 1rem 1.2rem; border-left: 3px solid #2dd4bf;
-  border-radius: 0 8px 8px 0; background: #13293d; color: #fff; font-weight: 600;
+.name { font-size: 3rem; margin: 0.5rem 0; color: #fff; }
+.role { font-size: 1.2rem; }
+.button {
+  display: inline-block; padding: 0.5rem 1.2rem; border-radius: 6px;
+  background: #fff; color: #2563eb; font-weight: 600;
 }
-.buttons { display: flex; gap: 0.8rem; margin-top: 2rem; }
-.primary, .secondary { padding: 0.7rem 1.2rem; border-radius: 8px; font-weight: 600; }
-.primary { background: #2dd4bf; color: #0f172a; }
-.secondary { border: 1px solid #fff; color: #fff; }
-.primary:hover { color: #0f172a; text-decoration: none; opacity: 0.9; }
-.secondary:hover { color: #fff; text-decoration: none; opacity: 0.9; }
-
-.card {
-  width: 320px; padding: 1rem; text-align: center;
-  border: 1px solid #334155; border-radius: 16px; background: #1e293b;
-}
-.tagline { font-size: 0.9rem; }
-.tagline span { color: #2dd4bf; font-weight: 600; }
-.badge {
-  display: block; padding: 1rem; margin-bottom: 1rem;
-  border-radius: 10px; background: #2dd4bf; color: #0f172a;
-}
-.badge strong { display: block; font-size: 1.2rem; }
-.badge span { font-size: 0.85rem; }
-.badge:hover { color: #0f172a; text-decoration: none; }
-.photo { display: block; width: 100%; border-radius: 10px; }
+.button:hover { color: #2563eb; text-decoration: none; opacity: 0.9; }
+.photo { width: 260px; border-radius: 16px; }
 
 @media (max-width: 768px) {
-  .container { flex-direction: column; text-align: center; }
-  .name { font-size: 2.5rem; }
-  .buttons { justify-content: center; }
-  .highlight { text-align: left; }
+  .container { flex-direction: column-reverse; text-align: center; }
+  .name { font-size: 2.2rem; }
+  .photo { width: 180px; }
 }
