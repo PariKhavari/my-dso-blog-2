@@ -19,7 +19,7 @@ export default function Header(): ReactNode {
         aria-expanded={open}
         onClick={() => setOpen(!open)}
       >
-        ☰
+        {open ? '✕' : '☰'}
       </button>
       <nav className={`${styles.nav} ${open ? styles.open : ''}`}>
         {items.map((item) => (
