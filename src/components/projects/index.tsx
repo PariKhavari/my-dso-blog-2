@@ -45,22 +45,25 @@ const projects: Project[] = [
 ];
 
 const MOBILE_VISIBLE_COUNT = 3;
+const DESKTOP_VISIBLE_COUNT = 5;
 
 export default function Projects(): ReactNode {
   const [activeIndex, setActiveIndex] = useState<number>(0);
   const [showAll, setShowAll] = useState<boolean>(false);
   const activeProject = projects[activeIndex];
   const mobileProjects = showAll ? projects : projects.slice(0, MOBILE_VISIBLE_COUNT);
+  const desktopProjects = showAll ? projects : projects.slice(0, DESKTOP_VISIBLE_COUNT);
 
   return (
     <section id="projects" className={styles.projects}>
       <div className={styles.inner}>
         <h2 className={styles.heading}>My project highlights</h2>
 
-        {/* Desktop: Liste links, aktive Karte rechts */}
-        <div className={styles.desktopLayout}>
+       {/* Desktop: Liste links, aktive Karte rechts */}
+      <div className={styles.desktopLayout}>
+        <div>
           <ol className={styles.projectList}>
-            {projects.map((project, index) => (
+            {desktopProjects.map((project, index) => (
               <li key={project.title} className={index === activeIndex ? styles.activeItem : styles.listItem}>
                 <button
                   type="button"
@@ -73,8 +76,14 @@ export default function Projects(): ReactNode {
               </li>
             ))}
           </ol>
-          {activeProject && <ProjectCard {...activeProject} variant="desktop" />}
+          {projects.length > DESKTOP_VISIBLE_COUNT && (
+            <button type="button" className={styles.seeMoreLink} onClick={() => setShowAll(!showAll)}>
+              ↳ {showAll ? 'see fewer projects' : 'see more projects'}
+            </button>
+          )}
         </div>
+        {activeProject && <ProjectCard {...activeProject} variant="desktop" />}
+      </div>
 
         {/* Mobile: Karten untereinander */}
         <div className={styles.mobileLayout}>
