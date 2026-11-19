@@ -3,6 +3,16 @@ import Link from '@docusaurus/Link';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import styles from './project-card.module.css';
 
+const devicon = 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons';
+
+const tagIcons: Record<string, string> = {
+  Python: `${devicon}/python/python-original.svg`,
+  Django: `${devicon}/django/django-plain.svg`,
+  Docker: `${devicon}/docker/docker-original.svg`,
+  Nginx: `${devicon}/nginx/nginx-original.svg`,
+  Security: 'https://cdn.jsdelivr.net/gh/jdecked/twemoji@latest/assets/svg/1f6e1.svg',
+};
+
 export interface Project {
   title: string;
   description: string;
@@ -27,7 +37,10 @@ export default function ProjectCard({
       </h3>
       <ul className={styles.tags}>
         {tags.map((tag) => (
-          <li key={tag} className={styles.tag}>{tag}</li>
+          <li key={tag} className={styles.tag}>
+              {tagIcons[tag] && <img src={tagIcons[tag]} alt="" className={styles.tagIcon} />}
+              {tag}
+          </li>
         ))}
       </ul>
       <p className={styles.description}>{description}</p>
