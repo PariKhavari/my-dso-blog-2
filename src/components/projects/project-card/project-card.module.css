@@ -1,43 +1,43 @@
 .card {
-  background: #1f2937;
+ background: #374151;
   color: #fff;
-  border-radius: 8px;
+  border-radius: 24px;
   padding: 1.5rem;
   gap: 1rem;
 }
 .title { margin: 0; }
 .tags { display: flex; flex-wrap: wrap; gap: 0.5rem; list-style: none; padding: 0; margin: 0; }
-.tag { background: #fff; color: #1f2937; border-radius: 4px; padding: 0.15rem 0.5rem; font-size: 0.8rem; }
+.tag {
+  display: flex; align-items: center; gap: 0.4rem;
+  background: #fff; color: #1f2937;
+  border-radius: 8px; padding: 0.3rem 0.6rem; font-size: 0.8rem;
+}
+.tagIcon { width: 24px; height: 24px; }
 .description { margin: 0; }
-.image { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; border-radius: 6px; }
+.image { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; border-radius: 16px; }
 .actions { display: flex; gap: 0.75rem; justify-content: flex-end; }
-.primary, .secondary { padding: 0.4rem 1rem; border-radius: 6px; font-weight: 500; color: #fff; }
+.primary, .secondary { padding: 0.6rem 1.2rem; border-radius: 999px; font-weight: 500; color: #fff; }
 .primary { background: #2563eb; }
 .secondary { border: 1px solid #fff; }
 .primary:hover, .secondary:hover { color: #fff; text-decoration: none; opacity: 0.85; }
 
-/* Desktop: Text links, Bild rechts */
+/* Desktop: Titel + Tags oben, Bild links, Text rechts */
 .desktop {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  align-items: center;
   grid-template-areas:
-    'title title'
-    'tags tags'
-    'text image'
+    'title tags'
+    'image text'
     'actions actions';
 }
 .desktop .title { grid-area: title; }
-.desktop .tags { grid-area: tags; }
+.desktop .tags { grid-area: tags; justify-content: flex-end; }
 .desktop .description { grid-area: text; }
 .desktop .image { grid-area: image; }
 .desktop .actions { grid-area: actions; }
 
-/* Mobile: alles untereinander */
+/* Mobile: alles untereinander, Bild vor dem Text */
 .mobile { display: flex; flex-direction: column; }
-
-.image {
-  width: 100%;
-  aspect-ratio: 16 / 9;
-  object-fit: cover;
-  border-radius: 12px;
-}
+.mobile .description { order: 1; }
+.mobile .actions { order: 2; }
