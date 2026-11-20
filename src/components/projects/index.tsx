@@ -5,7 +5,7 @@ import styles from './projects.module.css';
 const projects: Project[] = [
   {
     title: 'Baby Tools World',
-    description: 'Extended an existing Django shop with product tags, admin management and a filtered product view.',
+    description: 'This Django web shop for baby products was extended with product tags and a star rating system. Ratings and comments are saved in the database, and each user can rate a product only once. What made it exciting: working with Django models, forms and user authentication in a real project.',
     image: '/img/projects/baby-tools.png',
     tags: ['Python', 'Django'],
     docPath: 'docs/baby-tools-world',
@@ -13,7 +13,8 @@ const projects: Project[] = [
   },
   {
     title: 'Conduit Container',
-    description: 'Connected frontend, backend and PostgreSQL in containers with an Nginx API proxy and persistent volumes.',
+    description: 'The full-stack app Conduit runs completely in containers with Docker Compose: frontend, Django backend and PostgreSQL on one network. An Nginx reverse proxy forwards API requests, and named volumes keep the data persistent. New for me was building a multi-container setup with a reverse proxy.',
+
     image: '/img/projects/conduit.png',
     tags: ['Docker', 'Django', 'Nginx'],
     docPath: 'docs/conduit-container',
@@ -21,7 +22,7 @@ const projects: Project[] = [
   },
   {
     title: 'Truck Signs API',
-    description: 'Repaired a faulty container setup: Dockerfile, Compose, migrations and Gunicorn startup.',
+    description: 'A broken container setup for a Django REST API was repaired from the ground up: new Dockerfile, Compose file, automatic migrations on startup and Gunicorn as application server. Secrets are passed in via an .env file. Debugging this setup showed how containers, databases and app servers work together.',
     image: '/img/projects/truck-signs.png',
     tags: ['Python', 'Django', 'Docker'],
     docPath: 'docs/truck-signs-api',
@@ -29,18 +30,35 @@ const projects: Project[] = [
   },
   {
     title: 'OWASP Juice Shop',
-    description: 'Documented selected security challenges such as broken authentication and XSS.',
+    description: 'The OWASP Juice Shop is an intentionally vulnerable web app for security training. Selected challenges such as broken authentication, XSS and SQL injection are solved and documented, each with the vulnerability, the exploit and the fix. A first hands-on look at web security from an attacker\'s point of view.',
     image: '/img/projects/juice-shop.png',
     tags: ['Security'],
     docPath: 'docs/juice-shop',
+    githubLink: 'https://github.com/PariKhavari/my-dso-blog-2/tree/main/docs/juice-shop'
   },
     {
     title: 'Conduit deployment',
-    description: 'Automated CI/CD deployment of the Conduit full-stack application to a remote VM using GitHub Actions.',
+    description: 'This reproducible WordPress setup runs locally or on a cloud VM with Docker Compose. WordPress on Apache and a MySQL 8.0 database run as separate services, and named volumes keep uploads and data persistent. Interesting because it was a complete CMS stack deployed on a cloud VM.', 
     image: '/img/projects/conduit_deplpy.png',
-    tags: ['Dcker', 'GitHub Action', 'Linux'],
+    tags: ['Docker', 'GitHub Action', 'Linux'],
     docPath: 'docs/conduit-deployment',
     githubLink: 'https://github.com/PariKhavari/conduit-container-v2',
+  },
+    {
+    title: 'WordPress Container',
+    description: 'This reproducible WordPress setup runs locally or on a cloud VM with Docker Compose. WordPress on Apache and a MySQL 8.0 database run as separate services, and named volumes keep uploads and data persistent. Interesting because it was a complete CMS stack deployed on a cloud VM.',
+    image: '/img/projects/wordpress.png',
+    tags: ['Docker', 'WordPress', 'MySQL'],
+    docPath: 'docs/wordpress',
+    githubLink: 'https://github.com/PariKhavari/Wordpress',
+  },
+  {
+    title: 'Minecraft Server',
+    description: 'A Minecraft server runs in a Docker container on a Linux VM. The world data lives in a volume, so it survives restarts and updates. Server settings, ports, start, stop and backups are documented. A fun way to practice container operations, networking and backups with a real, playable service.',
+    image: '/img/projects/minecraft.png',
+    tags: ['Docker', 'Linux'],
+    docPath: 'docs/minecraft-server',
+    githubLink: 'https://github.com/PariKhavari/minecraft-server',
   },
 ];
 
