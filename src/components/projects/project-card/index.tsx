@@ -11,6 +11,9 @@ const tagIcons: Record<string, string> = {
   Docker: `${devicon}/docker/docker-original.svg`,
   Nginx: `${devicon}/nginx/nginx-original.svg`,
   Security: 'https://cdn.jsdelivr.net/gh/jdecked/twemoji@latest/assets/svg/1f6e1.svg',
+  Linux: `${devicon}/linux/linux-original.svg`,
+  MySQL: `${devicon}/mysql/mysql-original.svg`,
+  WordPress: `${devicon}/wordpress/wordpress-original.svg`,
 };
 
 export interface Project {
