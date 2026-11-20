@@ -1,0 +1,22 @@
+.footer {
+  background-color: #1f2937;
+  padding: 4rem 1rem 2rem;
+  text-align: center;
+}
+
+.topButton {
+  background: none;
+  border: 1px solid #ffffff;
+  border-radius: 12px;
+  color: #ffffff;
+  width: 27px;
+  height: 55px;
+  cursor: pointer;
+  margin-bottom: 2rem;
+}
+
+.text {
+  color: #ffffff;
+  font-size: 0.75rem;
+  margin: 0.25rem 0;
+}
