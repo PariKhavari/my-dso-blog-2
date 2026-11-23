@@ -1,6 +1,7 @@
 .skills { padding: 4rem 2rem; background: #1f2937; color: #fff; }
 .container { max-width: 1000px; margin: 0 auto; }
-.grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+.track { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+.page { display: contents; }
 
 .card {
   height: 170px; padding: 0; border: none; background: none;
@@ -10,7 +11,10 @@
   position: relative; display: block; width: 100%; height: 100%;
   transition: transform 0.6s; transform-style: preserve-3d;
 }
-.flipped .rotator { transform: rotateY(180deg); }
+@media (min-width: 769px) {
+  .card:hover .rotator,
+  .card:focus .rotator { transform: rotateY(180deg); }
+}
 
 .front, .back {
   position: absolute; inset: 0; padding: 1rem; border-radius: 25px;
@@ -24,28 +28,35 @@
 
 .dots { display: none; justify-content: center; gap: 0.5rem; margin-top: 1rem; }
 .dot { width: 10px; height: 10px; padding: 0; border: none; border-radius: 50%; background: #6b7280; cursor: pointer; }
-.activeDot { background: #fff; }
+.activeDot { background: #fff; width: 24px; border-radius: 5px; }
 
 @media (max-width: 768px) {
-  .skills .grid {
-    grid-template-columns: 1fr; gap: 2rem;
-    padding: 1rem; border-radius: 16px; background: #374151;
+  .skills[id] { padding: 4rem 0; }
+  .skills h2 { padding: 0 2rem; }
+  .viewport { overflow: hidden; }
+  .track {
+    display: flex; gap: 1rem;
+    transform: translateX(calc(7.5% - var(--page) * (85% + 1rem)));
+    transition: transform 0.4s;
   }
+  .page {
+    display: flex; flex-direction: column; gap: 2rem;
+    flex: 0 0 85%; padding: 2rem 1.5rem; border-radius: 25px;
+    background: #2a3342; transition: background 0.2s;
+  }
+  .page:active { background: #3a4456; }
   .card { height: auto; cursor: default; perspective: none; }
-  .rotator,
-  .flipped .rotator {
+  .rotator {
     display: flex; align-items: center; gap: 1rem;
-    padding: 0; border-radius: 0; background: none;
     transform: none; transform-style: flat;
   }
   .front, .back { position: static; padding: 0; background: none; transform: none; }
   .front {
     flex-direction: column; align-items: center; gap: 0.25rem;
-    width: 60px; flex-shrink: 0; font-size: 0.75rem;
+    width: 75px; flex-shrink: 0; font-size: 1rem;
   }
-  .back { align-items: flex-start; text-align: left; font-size: 0.75rem; line-height: 1.3; }
-  .line { margin: 0; }
-  .icon { width: 32px; height: 32px; }
-  .hiddenMobile { display: none; }
-  .dots { display: flex; }
+  .back { align-items: flex-start; text-align: left; font-size: 1rem; line-height: 1.3; }
+  .line { margin: 0; padding-left: 0.8em; text-indent: -0.8em; }
+  .icon { width: 48px; height: 48px; }
+  .dots { display: flex; margin-top: 1.5rem; }
 }
