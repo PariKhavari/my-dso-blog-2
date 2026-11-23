@@ -1,4 +1,4 @@
-import React, { useState, type ReactNode } from 'react';
+import React, { useRef,useState, type ReactNode } from 'react';
 import styles from './skills.module.css';
 
 interface Skill {
@@ -25,37 +25,50 @@ const perPage = 3;
 const pageCount = Math.ceil(skills.length / perPage);
 
 export default function Skills(): ReactNode {
-  const [flipped, setFlipped] = useState<string | null>(null);
   const [page, setPage] = useState<number>(0);
+  const touchStartX = useRef<number | null>(null);
+  const pages = Array.from({ length: pageCount }, (_, i) =>
+    skills.slice(i * perPage, (i + 1) * perPage),
+  );
+
+  function handleTouchEnd(e: React.TouchEvent) {
+    if (touchStartX.current === null) return;
+    const diff = e.changedTouches[0].clientX - touchStartX.current;
+    if (diff < -50) setPage((p) => Math.min(p + 1, pageCount - 1));
+    if (diff > 50) setPage((p) => Math.max(p - 1, 0));
+    touchStartX.current = null;
+  }
 
   return (
     <section id="skills" className={styles.skills}>
       <div className={styles.container}>
         <h2>My skills</h2>
-        <div className={styles.grid}>
-          {skills.map((skill, index) => (
-            <button
-              key={skill.name}
-              type="button"
-              className={`${styles.card} ${flipped === skill.name ? styles.flipped : ''} ${
-                Math.floor(index / perPage) !== page ? styles.hiddenMobile : ''
-              }`}
-              onClick={() => setFlipped(flipped === skill.name ? null : skill.name)}
-              aria-pressed={flipped === skill.name}
-            >
-              <span className={styles.rotator}>
-                <span className={styles.front}>
-                  <img src={skill.icon} alt="" className={styles.icon} loading="lazy" />
-                  <span>{skill.name}</span>
-                </span>
-                <span className={styles.back}>
-                  {skill.info.map((line) => (
-                    <span key={line} className={styles.line}>• {line}</span>
-                  ))}
-                </span>
-              </span>
-            </button>
-          ))}
+        <div
+          className={styles.viewport}
+          onTouchStart={(e) => { touchStartX.current = e.touches[0].clientX; }}
+          onTouchEnd={handleTouchEnd}
+        >
+          <div className={styles.track} style={{ '--page': page } as React.CSSProperties}>
+            {pages.map((group, i) => (
+              <div key={i} className={styles.page}>
+                {group.map((skill) => (
+                  <div key={skill.name} tabIndex={0} className={styles.card}>
+                    <span className={styles.rotator}>
+                      <span className={styles.front}>
+                        <img src={skill.icon} alt="" className={styles.icon} loading="lazy" />
+                        <span>{skill.name}</span>
+                      </span>
+                      <span className={styles.back}>
+                        {skill.info.map((line) => (
+                          <span key={line} className={styles.line}>• {line}</span>
+                        ))}
+                      </span>
+                    </span>
+                  </div>
+                ))}
+              </div>
+            ))}
+          </div>
         </div>
         <div className={styles.dots}>
           {Array.from({ length: pageCount }, (_, i) => (
