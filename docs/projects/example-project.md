@@ -7,7 +7,7 @@ A simple and brief description and intro to the project.
 
 <!--INSERT YOUR TABLE OF CONTENTS HERE -->
 
-import GithubLinkAdmonition from '@site/src/components/GithubLinkAdmonition';
+import GithubLinkAdmonition from '@site/src/components/github-link-admonition';
 
 <GithubLinkAdmonition 
     link="https://github.com/spmse/dev-blog-template"

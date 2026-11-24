@@ -8,7 +8,7 @@ My personal DevSecOps learning journal, built with Docusaurus and based on the d
 - [Description](#description)
 - [Further References](#further-references)
 
-import GithubLinkAdmonition from '@site/src/components/GithubLinkAdmonition';
+import GithubLinkAdmonition from '@site/src/components/github-link-admonition';
 
 <GithubLinkAdmonition 
     link="https://github.com/PariKhavari/my-dso-blog-2"

@@ -7,7 +7,7 @@ This page documents how I configured my very first cloud server instance in the 
 
 <!--INSERT YOUR TABLE OF CONTENTS HERE -->
 
-import GithubLinkAdmonition from '@site/src/components/GithubLinkAdmonition';
+import GithubLinkAdmonition from '@site/src/components/github-link-admonition';
 
 <GithubLinkAdmonition 
     link="https://github.com/spmse/dev-blog-template"
