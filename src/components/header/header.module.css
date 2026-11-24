@@ -21,7 +21,7 @@
 
 @media (max-width: 768px) {
   .header { justify-content: flex-end; padding: 0 1rem; }
-  .burger { display: block; position: relative; z-index: 2; }
+  .burger { display: block; position: relative; z-index: 2; font-size: 2.2rem; line-height: 1; }
   .burger[aria-expanded='true'] { color: #2563eb; }
   .nav {
     display: none;
@@ -32,6 +32,6 @@
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
   }
   .nav.open { display: flex; }
-  .link { font-size: 0.85rem; }
-  .open .link { color: #2563eb; }
+   .link { font-size: 1.3rem; font-weight: 500; }
+  .open .link { color: #195cec; }
 }
