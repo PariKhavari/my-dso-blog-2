@@ -15,7 +15,7 @@ export default function Home(): ReactNode {
         <style>{`.navbar { display: none !important; }`}</style>
       </Head>
       <Header />
-      <main>
+      <main style={{ paddingTop: '4rem' }}>
         <Hero />
         <Skills />
         <Projects />

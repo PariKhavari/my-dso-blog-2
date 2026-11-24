@@ -1,4 +1,4 @@
-import React, { useState, type ReactNode } from 'react';
+import React, { useEffect, useState, type ReactNode } from 'react';
 import styles from './header.module.css';
 
 const items = [
@@ -10,9 +10,21 @@ const items = [
 
 export default function Header(): ReactNode {
   const [open, setOpen] = useState<boolean>(false);
+  const [hidden, setHidden] = useState<boolean>(false);
+
+  useEffect(() => {
+    let lastY = window.scrollY;
+    function onScroll() {
+      const y = window.scrollY;
+      setHidden(y > lastY && y > 80);
+      lastY = y;
+    }
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
 
   return (
-    <header className={styles.header}>
+    <header className={`${styles.header} ${hidden && !open ? styles.hidden : ''}`}>
       <button
         className={styles.burger}
         aria-label="Toggle menu"
