@@ -108,6 +108,10 @@ export default function Projects(): ReactNode {
           {mobileProjects.map((project, index) => (
             <ProjectCard key={project.title} {...project} variant="mobile" indexNumber={index + 1} />
           ))}
+            <p className={styles.moreText}>
+            Besides these highlights, I have worked on further projects with Docker,
+            Linux servers and CI/CD. You can find them in my documentation and on GitHub.
+          </p>
           {projects.length > MOBILE_VISIBLE_COUNT && (
             <button
               type="button"
@@ -115,7 +119,7 @@ export default function Projects(): ReactNode {
               aria-expanded={showAll}
               onClick={() => setShowAll(!showAll)}
             >
-              {showAll ? 'Show fewer projects' : 'Show all projects'}
+              {showAll ? '↑ see fewer projects' : '↳ see more projects'}
             </button>
           )}
         </div>
