@@ -5,24 +5,28 @@
 
 .card {
   height: 170px; padding: 0; border: none; background: none;
-  color: inherit; font: inherit; cursor: pointer; perspective: 800px;
+  color: inherit; font: inherit; cursor: pointer;
 }
-.rotator {
-  position: relative; display: block; width: 100%; height: 100%;
-  transition: transform 0.6s; transform-style: preserve-3d;
-}
-@media (min-width: 769px) {
-  .card:hover .rotator,
-  .card:focus .rotator { transform: rotateY(180deg); }
-}
+.rotator { position: relative; display: block; width: 100%; height: 100%; }
 
 .front, .back {
   position: absolute; inset: 0; padding: 1rem; border-radius: 25px;
   display: flex; flex-direction: column; align-items: center; justify-content: center;
   gap: 0.5rem; background: #374151;
-  backface-visibility: hidden; -webkit-backface-visibility: hidden;
 }
-.back { transform: rotateY(180deg); background: #2563eb; font-size: 0.8rem; text-align: center; }
+.back {
+  background: #51749f; font-size: 0.85rem; font-weight: 300;
+  align-items: flex-start; justify-content: center; text-align: left;
+  padding: 1rem 1.5rem; gap: 0.1rem; line-height: 1.3;
+  opacity: 0; transition: opacity 0.3s ease;
+}
+.backTitle { font-size: 1.1rem; font-weight: 400; margin-bottom: 0.35rem; }
+.line { display: block; text-align: left; white-space: nowrap; }
+
+@media (min-width: 769px) {
+  .card:hover .back,
+  .card:focus .back { opacity: 1; }
+}
 .icon { width: 64px; height: 64px; object-fit: contain; }
 .line { display: block; text-align: left; }
 
@@ -34,6 +38,7 @@
   .skills[id] { padding: 4rem 0; }
   .skills h2 { padding: 0 2rem; }
   .viewport { overflow: hidden; }
+  .backTitle { display: none; }
   .track {
     display: flex; gap: 1rem;
     transform: translateX(calc(7.5% - var(--page) * (85% + 1rem)));
@@ -45,17 +50,14 @@
     background: #2a3342; transition: background 0.2s;
   }
   .page:active { background: #3a4456; }
-  .card { height: auto; cursor: default; perspective: none; }
-  .rotator {
-    display: flex; align-items: center; gap: 1rem;
-    transform: none; transform-style: flat;
-  }
-  .front, .back { position: static; padding: 0; background: none; transform: none; }
+  .card { height: auto; cursor: default; }
+  .rotator { display: flex; align-items: center; gap: 1rem; }
+  .front, .back { position: static; padding: 0; background: none; }
   .front {
     flex-direction: column; align-items: center; gap: 0.25rem;
     width: 75px; flex-shrink: 0; font-size: 1rem;
   }
-  .back { align-items: flex-start; text-align: left; font-size: 1rem; line-height: 1.3; }
+  .back { opacity: 1; align-items: flex-start; text-align: left; font-size: 1rem; line-height: 1.3; gap: 0.1rem; }
   .line { margin: 0; padding-left: 0.8em; text-indent: -0.8em; }
   .icon { width: 48px; height: 48px; }
   .dots { display: flex; margin-top: 1.5rem; }

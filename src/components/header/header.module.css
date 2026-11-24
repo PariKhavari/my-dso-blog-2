@@ -5,6 +5,7 @@
   padding: 0 max(2rem, calc((100% - 1000px) / 2));
   background: #2563eb;
   transition: transform 0.3s;
+  border-bottom: 1.5px solid rgba(0, 0, 0, 0.2);
 }
 .hidden { transform: translateY(-100%); }
 .nav { display: flex; gap: 2rem; }

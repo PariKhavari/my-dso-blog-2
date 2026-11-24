@@ -1,14 +1,20 @@
-.hero { padding: 3rem 2rem; background: #2563eb; color: #fff; }
+.hero { padding: 3rem 0 4rem; background: #2563eb; color: #fff; }
+
 .container {
-  display: flex; align-items: center; justify-content: space-between;
+  display: flex; align-items: flex-end; justify-content: space-between;
   gap: 2rem; max-width: 1000px; margin: 0 auto;
+}
+.button {     
+  display: inline-block;
+  margin-top: 1rem;
 }
 .text { max-width: 600px; }
 .greeting { margin: 0; }
 .name { font-size: 3rem; margin: 0.5rem 0; color: #fff; }
 .role { font-size: 1.2rem; }
 .button {
-  display: inline-block; padding: 01rem 1.2rem; border-radius: 30px;
+  margin-top: 1rem; 
+  display: inline-block; padding: 0.5rem 1rem; border-radius: 30px;
   background: #fff; color: #2563eb; font-weight: 600;
 }
 .button:hover { color: #2563eb; text-decoration: none; opacity: 0.9; }

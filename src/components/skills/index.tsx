@@ -1,4 +1,4 @@
-import React, { useRef,useState, type ReactNode } from 'react';
+import React, { useRef, useState, type ReactNode } from 'react';
 import styles from './skills.module.css';
 
 interface Skill {
@@ -10,15 +10,15 @@ interface Skill {
 const devicon = 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons';
 
 const skills: Skill[] = [
-  { icon: `${devicon}/python/python-original.svg`, name: 'Python', info: ['Backend development', 'Automation scripts', 'Used in Django projects'] },
-  { icon: `${devicon}/django/django-plain.svg`, name: 'Django', info: ['ORM and admin', 'Extended an existing shop', 'Models, views, templates'] },
-  { icon: `${devicon}/linux/linux-original.svg`, name: 'Linux', info: ['Servers and VMs', 'Users and permissions', 'Package and service management'] },
-  { icon: `${devicon}/git/git-original.svg`, name: 'Git', info: ['Version control', 'Feature branches and PRs', 'Clean commit history'] },
-  { icon: `${devicon}/docker/docker-original.svg`, name: 'Docker', info: ['Containerizing apps', 'Dockerfiles and Compose', 'Networks and volumes'] },
-  { icon: `${devicon}/githubactions/githubactions-original.svg`, name: 'GitHub Actions', info: ['CI/CD pipelines', 'Build and test on push', 'Deploy to Pages and VMs'] },
-  { icon: `${devicon}/nginx/nginx-original.svg`, name: 'Nginx', info: ['Static web server', 'Reverse proxy', 'Basic HTTPS setup'] },
-  { icon: `${devicon}/yaml/yaml-original.svg`, name: 'YAML', info: ['Pipeline configuration', 'Docker Compose files', 'Structured setup'] },
-  { icon: 'https://cdn.jsdelivr.net/gh/jdecked/twemoji@latest/assets/svg/1f6e1.svg', name: 'Security', info: ['Security checks in CI', 'Secrets in env variables', 'OWASP Juice Shop'] },
+  { icon: `${devicon}/python/python-original.svg`, name: 'Python', info: ['Django backends', 'Automation scripts', 'Rating system', 'Clean code'] },
+  { icon: `${devicon}/django/django-plain.svg`, name: 'Django', info: ['Baby Tools Shop', 'Models and views', 'Admin panel', 'Ratings and comments'] },
+  { icon: `${devicon}/linux/linux-original.svg`, name: 'Linux', info: ['VM setup', 'Users and permissions', 'Package management', 'Shell commands'] },
+  { icon: `${devicon}/git/git-original.svg`, name: 'Git', info: ['Feature branches', 'Pull requests', 'Clear commits', 'Merge conflicts'] },
+  { icon: `${devicon}/docker/docker-original.svg`, name: 'Docker', info: ['Containerized apps', 'Docker Compose', 'Volumes', 'Fixing setups'] },
+  { icon: `${devicon}/githubactions/githubactions-original.svg`, name: 'GitHub Actions', info: ['CI/CD pipelines', 'Deploy on push', 'GitHub Pages', 'Security checks'] },
+  { icon: `${devicon}/nginx/nginx-original.svg`, name: 'Nginx', info: ['Static websites', 'Reverse proxy', 'Container routing', 'HTTPS setup'] },
+  { icon: `${devicon}/yaml/yaml-original.svg`, name: 'YAML', info: ['Actions workflows', 'Compose files', 'Dependabot config', 'Structured configs'] },
+  { icon: 'https://cdn.jsdelivr.net/gh/jdecked/twemoji@latest/assets/svg/1f6e1.svg', name: 'Security', info: ['Env variables', 'OWASP Juice Shop', 'Dependabot updates', 'No secrets in Git'] },
 ];
 
 const perPage = 3;
@@ -59,6 +59,7 @@ export default function Skills(): ReactNode {
                         <span>{skill.name}</span>
                       </span>
                       <span className={styles.back}>
+                        <span className={styles.backTitle}>How I used these skills</span>
                         {skill.info.map((line) => (
                           <span key={line} className={styles.line}>• {line}</span>
                         ))}
