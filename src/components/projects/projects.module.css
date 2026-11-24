@@ -8,14 +8,14 @@
   gap: 2rem;
   align-items: start;
 }
-.projectList { padding-left: 1.25rem; margin: 0; }
+.projectList { padding-left: 1.25rem; margin: 0;font-size: 1.3rem;}
 .listItem, .activeItem { margin-bottom: 0.75rem; }
 .projectButton {
   background: none;
   border: none;
   padding: 0;
   color: #fff;
-  font-size: 1rem;
+  font-size: 1.3rem;
   text-align: left;
   cursor: pointer;
 }
@@ -27,7 +27,7 @@
 .activeItem::marker { color: #111827; }
 .seeMoreLink {
   background: none; border: none; padding: 0;
-  color: #fff; font-size: 1rem; text-decoration: underline; cursor: pointer;
+  color: #fff; font-size: 1.3rem; text-decoration: underline; cursor: pointer;
 }
 .mobileLayout { display: none; flex-direction: column; gap: 1.5rem; }
 .seeMore {
@@ -36,7 +36,7 @@
   border: none;
   padding: 0;
   color: #fff;
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   text-decoration: underline;
   cursor: pointer;
 }
