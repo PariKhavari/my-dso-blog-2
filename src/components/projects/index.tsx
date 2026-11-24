@@ -1,4 +1,4 @@
-import { useState, type ReactNode } from 'react';
+import { useEffect,useState, type ReactNode } from 'react';
 import ProjectCard, { type Project } from './project-card';
 import styles from './projects.module.css';
 
@@ -22,7 +22,7 @@ const projects: Project[] = [
   },
   {
     title: 'Truck Signs API',
-    description: 'A broken container setup for a Django REST API was repaired from the ground up: new Dockerfile, Compose file, automatic migrations on startup and Gunicorn as application server. Secrets are passed in via an .env file. Debugging this setup showed how containers, databases and app servers work together.',
+    description: 'A broken container setup for a Django REST API was repaired from the ground up: new Dockerfile, Compose file, automatic migrations on startup and Gunicorn as application server. Secrets are passed in via an .env file. ',
     image: '/img/projects/truck-signs.png',
     tags: ['Python', 'Django', 'Docker'],
     docPath: 'docs/truck-signs-api',
@@ -30,7 +30,7 @@ const projects: Project[] = [
   },
   {
     title: 'OWASP Juice Shop',
-    description: 'The OWASP Juice Shop is an intentionally vulnerable web app for security training. Selected challenges such as broken authentication, XSS and SQL injection are solved and documented, each with the vulnerability, the exploit and the fix. A first hands-on look at web security from an attacker\'s point of view.',
+    description: 'The OWASP Juice Shop is an intentionally vulnerable web app for security training. Selected challenges such as broken authentication, XSS and SQL injection are solved and documented, each with the vulnerability, the exploit and the fix.',
     image: '/img/projects/juice-shop.png',
     tags: ['Security'],
     docPath: 'docs/juice-shop',
@@ -45,7 +45,7 @@ const projects: Project[] = [
     githubLink: 'https://github.com/PariKhavari/conduit-container-v2',
   },
     {
-    title: 'WordPress Container',
+    title: 'WordPress hosten',
     description: 'This reproducible WordPress setup runs locally or on a cloud VM with Docker Compose. WordPress on Apache and a MySQL 8.0 database run as separate services, and named volumes keep uploads and data persistent. Interesting because it was a complete CMS stack deployed on a cloud VM.',
     image: '/img/projects/wordpress.png',
     tags: ['Docker', 'WordPress', 'MySQL'],
@@ -67,6 +67,15 @@ const DESKTOP_VISIBLE_COUNT = 5;
 
 export default function Projects(): ReactNode {
   const [activeIndex, setActiveIndex] = useState<number>(0);
+    useEffect(() => {
+    const saved = Number(sessionStorage.getItem('activeProject'));
+    if (saved > 0 && saved < projects.length) setActiveIndex(saved);
+  }, []);
+
+  function selectProject(index: number): void {
+    setActiveIndex(index);
+    sessionStorage.setItem('activeProject', String(index));
+  }
   const [showAll, setShowAll] = useState<boolean>(false);
   const activeProject = projects[activeIndex];
   const mobileProjects = showAll ? projects : projects.slice(0, MOBILE_VISIBLE_COUNT);
@@ -87,7 +96,7 @@ export default function Projects(): ReactNode {
                   type="button"
                   className={styles.projectButton}
                   aria-pressed={index === activeIndex}
-                  onClick={() => setActiveIndex(index)}
+                   onClick={() => selectProject(index)}
                 >
                   {project.title}
                 </button>
@@ -96,7 +105,7 @@ export default function Projects(): ReactNode {
           </ol>
           {projects.length > DESKTOP_VISIBLE_COUNT && (
             <button type="button" className={styles.seeMoreLink} onClick={() => setShowAll(!showAll)}>
-              ↳ {showAll ? 'see fewer projects' : 'see more projects'}
+              ↳ {showAll ? ' see more projects' : ' see more projects'}
             </button>
           )}
         </div>
@@ -119,7 +128,7 @@ export default function Projects(): ReactNode {
               aria-expanded={showAll}
               onClick={() => setShowAll(!showAll)}
             >
-              {showAll ? '↑ see fewer projects' : '↳ see more projects'}
+              {showAll ? '↑ see more projects' : '↳ see more projects'}
             </button>
           )}
         </div>
