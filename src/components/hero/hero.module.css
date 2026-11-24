@@ -1,21 +1,33 @@
-.hero { padding: 3rem 2rem; background: #2563eb; color: #fff; }
+.hero { padding: 3rem 0 4rem; background: #2563eb; color: #fff; }
+
 .container {
-  display: flex; align-items: center; justify-content: space-between;
+  display: flex; align-items: flex-end; justify-content: space-between;
   gap: 2rem; max-width: 1000px; margin: 0 auto;
+}
+.button {     
+  display: inline-block;
+  margin-top: 1rem;
 }
 .text { max-width: 600px; }
 .greeting { margin: 0; }
 .name { font-size: 3rem; margin: 0.5rem 0; color: #fff; }
 .role { font-size: 1.2rem; }
 .button {
-  display: inline-block; padding: 0.5rem 1.2rem; border-radius: 6px;
+  margin-top: 1rem; 
+  display: inline-block; padding: 0.5rem 1rem; border-radius: 30px;
   background: #fff; color: #2563eb; font-weight: 600;
 }
 .button:hover { color: #2563eb; text-decoration: none; opacity: 0.9; }
 .photo { width: 260px; border-radius: 16px; }
 
 @media (max-width: 768px) {
-  .container { flex-direction: column-reverse; text-align: center; }
-  .name { font-size: 2.2rem; }
-  .photo { width: 180px; }
+  .hero[id] { padding: 1.5rem 2.5rem 2rem; }
+  .container { flex-direction: column; align-items: flex-start; text-align: left; gap: 0; }
+  .text { display: contents; }
+  .greeting { order: 1; font-size: 1.5rem; }
+  .name { order: 2; font-size: 2.8rem; margin: 0; line-height: 1.1; }
+  .role { order: 3; font-size: 1.5rem; margin: 0; }
+  .description { order: 5; margin-bottom: 1.5rem; }
+  .photo { order: 4; width: 100%; align-self: center; margin: 1.5rem 0; border-radius: 24px; }
+  .button { order: 6; align-self: center; }
 }

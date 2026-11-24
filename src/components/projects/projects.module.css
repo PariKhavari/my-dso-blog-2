@@ -18,7 +18,10 @@
   font-size: 1rem;
   text-align: left;
   cursor: pointer;
-  opacity: 0.7;
+}
+.projectButton:hover {
+  font-weight: 700;
+  text-decoration: underline;
 }
 .activeItem .projectButton { opacity: 1; color: #1e2431; font-weight: 600; }
 .activeItem::marker { color: #111827; }
@@ -29,15 +32,18 @@
 .mobileLayout { display: none; flex-direction: column; gap: 1.5rem; }
 .seeMore {
   align-self: center;
-  background: #fff;
-  color: #2563eb;
+  background: none;
   border: none;
-  border-radius: 6px;
-  padding: 0.5rem 1.25rem;
-  font-weight: 500;
+  padding: 0;
+  color: #fff;
+  font-size: 1.2rem;
+  text-decoration: underline;
   cursor: pointer;
 }
-
+.moreText {
+  color: #fff;
+  margin: 1rem 0 0;
+}
 @media (max-width: 768px) {
   .desktopLayout { display: none; }
   .mobileLayout { display: flex; }
