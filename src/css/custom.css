@@ -37,6 +37,7 @@ main section[id] { padding-top: rem; padding-bottom: 5rem; }
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
 }
 
 button {

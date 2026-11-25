@@ -8,7 +8,7 @@ const projects: Project[] = [
     description: 'This Django web shop for baby products was extended with product tags and a star rating system. Ratings and comments are saved in the database, and each user can rate a product only once. What made it exciting: working with Django models, forms and user authentication in a real project.',
     image: '/img/projects/baby-tools.png',
     tags: ['Python', 'Django'],
-    docPath: 'docs/baby-tools-world',
+    docPath: 'docs/projects/baby-tools-world',
     githubLink: 'https://github.com/PariKhavari/baby-tools-world',
   },
   {
@@ -17,7 +17,7 @@ const projects: Project[] = [
 
     image: '/img/projects/conduit.png',
     tags: ['Docker', 'Django', 'Nginx'],
-    docPath: 'docs/conduit-container',
+    docPath: 'docs/projects/conduit-container',
     githubLink: 'https://github.com/PariKhavari/conduit-container-v2',
   },
   {
@@ -25,7 +25,7 @@ const projects: Project[] = [
     description: 'A broken container setup for a Django REST API was repaired from the ground up: new Dockerfile, Compose file, automatic migrations on startup and Gunicorn as application server. Secrets are passed in via an .env file. ',
     image: '/img/projects/truck-signs.png',
     tags: ['Python', 'Django', 'Docker'],
-    docPath: 'docs/truck-signs-api',
+    docPath: 'docs/projects/truck-signs-api',
     githubLink: 'https://github.com/PariKhavari/truck_signs_api',
   },
   {
@@ -33,7 +33,7 @@ const projects: Project[] = [
     description: 'The OWASP Juice Shop is an intentionally vulnerable web app for security training. Selected challenges such as broken authentication, XSS and SQL injection are solved and documented, each with the vulnerability, the exploit and the fix.',
     image: '/img/projects/juice-shop.png',
     tags: ['Security'],
-    docPath: 'docs/juice-shop',
+    docPath: 'docs/projects/juice-shop',
     githubLink: 'https://github.com/PariKhavari/my-dso-blog-2/tree/main/docs/juice-shop'
   },
     {
@@ -41,7 +41,7 @@ const projects: Project[] = [
     description: 'This reproducible WordPress setup runs locally or on a cloud VM with Docker Compose. WordPress on Apache and a MySQL 8.0 database run as separate services, and named volumes keep uploads and data persistent. Interesting because it was a complete CMS stack deployed on a cloud VM.', 
     image: '/img/projects/conduit_deplpy.png',
     tags: ['Docker', 'GitHub Action', 'Linux'],
-    docPath: 'docs/conduit-deployment',
+    docPath: 'docs/projects/conduit-deployment',
     githubLink: 'https://github.com/PariKhavari/conduit-container-v2',
   },
     {
@@ -49,7 +49,7 @@ const projects: Project[] = [
     description: 'This reproducible WordPress setup runs locally or on a cloud VM with Docker Compose. WordPress on Apache and a MySQL 8.0 database run as separate services, and named volumes keep uploads and data persistent. Interesting because it was a complete CMS stack deployed on a cloud VM.',
     image: '/img/projects/wordpress.png',
     tags: ['Docker', 'WordPress', 'MySQL'],
-    docPath: 'docs/wordpress',
+    docPath: 'docs/projects/wordpress',
     githubLink: 'https://github.com/PariKhavari/Wordpress',
   },
   {
@@ -57,7 +57,7 @@ const projects: Project[] = [
     description: 'A Minecraft server runs in a Docker container on a Linux VM. The world data lives in a volume, so it survives restarts and updates. Server settings, ports, start, stop and backups are documented. A fun way to practice container operations, networking and backups with a real, playable service.',
     image: '/img/projects/minecraft.png',
     tags: ['Docker', 'Linux'],
-    docPath: 'docs/minecraft-server',
+    docPath: 'docs/projects/minecraft-server',
     githubLink: 'https://github.com/PariKhavari/minecraft-server',
   },
 ];

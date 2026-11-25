@@ -38,8 +38,11 @@
 }
 
 @media (max-width: 768px) {
-  .left {
-    max-width: 100%;
+  .left { max-width: 100%; }
+  .contact {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    padding: 2rem 2rem 0.5rem;
   }
-    .contact { grid-template-columns: 1fr; padding: 3rem 1.5rem; }
+  .link:last-child { margin-bottom: 0; }
 }
