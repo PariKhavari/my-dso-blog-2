@@ -47,4 +47,5 @@
 @media (max-width: 768px) {
   .desktopLayout { display: none; }
   .mobileLayout { display: flex; }
+  .projects { padding: 2rem 1rem; }
 }
