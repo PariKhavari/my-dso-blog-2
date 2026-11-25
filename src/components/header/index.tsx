@@ -11,7 +11,6 @@ const items = [
 export default function Header(): ReactNode {
   const [open, setOpen] = useState<boolean>(false);
   const [hidden, setHidden] = useState<boolean>(false);
-  const [openY, setOpenY] = useState<number>(0);
 
   useEffect(() => {
     let lastY = window.scrollY;
@@ -25,10 +24,7 @@ export default function Header(): ReactNode {
   }, []);
 
   return (
-    <header 
-      className={`${styles.header} ${hidden && !open ? styles.hidden : ''}`}
-      style={open ? { position: 'relative', top: openY } : undefined}
-      >
+    <header className={`${styles.header} ${hidden && !open ? styles.hidden : ''}`}>
       <button
         className={styles.burger}
         aria-label="Toggle menu"
